@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9e9c201-83c1-4152-ac4c-ccd4547b8b2e" name="Changes" comment="Gavno but worked">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Utility/Site.java" afterDir="false" />
+    <list default="true" id="f9e9c201-83c1-4152-ac4c-ccd4547b8b2e" name="Changes" comment="Gavno but worked sdf">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Sites/HeadHunter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sites/HeadHunter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +82,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685285013551</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Gavno but worked sdf">
+      <created>1685445637263</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1685445637263</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -100,6 +105,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Gavno but worked" />
-    <option name="LAST_COMMIT_MESSAGE" value="Gavno but worked" />
+    <MESSAGE value="Gavno but worked sdf" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gavno but worked sdf" />
   </component>
 </project>

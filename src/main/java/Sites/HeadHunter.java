@@ -11,7 +11,7 @@ import java.nio.charset.StandardCharsets;
 
 public class HeadHunter implements Site {
 
-    private String search_value = "https://api.hh.ru/vacancies?only_with_salary=true&per_page=100&";
+    private String search_value = "https://api.hh.ru/vacancies";
     private String answer = "";
     public String getJsonVacancies() throws IOException {
         URL url = new URL(search_value);
@@ -20,14 +20,11 @@ public class HeadHunter implements Site {
 
     void useFilter(){
         if(Collector.getKeyWords() != null ){
-            String[] arrWords = Collector.getKeyWords().split(" ");
-            StringBuilder addWords = new StringBuilder("text=");
-            addWords.append(arrWords[0]);
-            for(int i = 1;i < arrWords.length;i++){
-                addWords.append("+").append(arrWords[i]);
-            }
-            search_value += addWords;
+            search_value = addOrReplacementParametrURL(search_value, "text", Collector.getKeyWords());
         }
+        search_value = addOrReplacementParametrURL(search_value, "only_with_salary", "true");
+        search_value = addOrReplacementParametrURL(search_value, "per_page", "100");
+        System.out.println(search_value);
     }
 
     void fillAnswer(String raw_json_vacancies){
@@ -53,8 +50,23 @@ public class HeadHunter implements Site {
         return answer;
     }
 
-    String addOrReplacementParametrURL(String url){
+    String addOrReplacementParametrURL(String url, String param, String value){
+        value = value.strip().replaceAll(" ","+");
+        if(!(url.contains("?"))){
+            url += "?" + param + "=" + value;
+            return url;
+        }
+        String[] parameters = url.split("\\?")[1].split("&"); // for_example parameters[0] is page=4
 
-        return null;
+        for(int i = 0; i < parameters.length; i++){ // Replace
+            if(parameters[i].startsWith(param)){
+                parameters[i] = param + "=" + value;
+                url = url.split("\\?")[0] + "?" + String.join("&",parameters);
+                return url;
+            }
+        }
+
+        url = url.split("\\?")[0] + "?" + String.join("&",parameters) + "&" + param + "=" + value;
+        return url;
     }
 }
