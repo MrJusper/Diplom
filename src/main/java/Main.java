@@ -1,4 +1,5 @@
 import Sites.*;
+import Utility.Site;
 import Utility.UserInterface;
 // Необходим для запуска ПО, + только через него будет происходить обращения к конкретным классам
 // для обработки ответов от сайтов, и отправки запросов
@@ -6,10 +7,10 @@ import Utility.UserInterface;
 public class Main {
     public static void main(String[] args){
 
-        HeadHunter hhru = new HeadHunter();
+        Site hhru = new HeadHunter();
         UserInterface IOUserInterface = new UserInterface();
         try{
-            hhru.getVacancies();
+            hhru.getParseData();
            // TrudVsem.getVacancies();
           //  ZarplataRU.getVacancies();
         } catch (Exception ex){

@@ -4,20 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9e9c201-83c1-4152-ac4c-ccd4547b8b2e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Sites/HeadHunter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Sites/TrudVsem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Sites/ZarplataRU.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Utility/Collector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Utility/FileManipulator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Utility/UserInterface.java" afterDir="false" />
+    <list default="true" id="f9e9c201-83c1-4152-ac4c-ccd4547b8b2e" name="Changes" comment="Gavno but worked">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Utility/Site.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Sites/HeadHunter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sites/HeadHunter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +19,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -78,6 +70,21 @@
       <option name="presentableId" value="Default" />
       <updated>1683896962674</updated>
     </task>
+    <task id="LOCAL-00001" summary="Gavno but worked">
+      <created>1685284985390</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1685284985390</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Gavno but worked">
+      <created>1685285013551</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1685285013551</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -90,5 +97,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Gavno but worked" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gavno but worked" />
   </component>
 </project>
