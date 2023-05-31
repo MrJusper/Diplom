@@ -10,7 +10,7 @@ public class Main {
         Site hhru = new HeadHunter();
         UserInterface IOUserInterface = new UserInterface();
         try{
-            hhru.getParseData();
+       //     hhru.getParseData();
            // TrudVsem.getVacancies();
           //  ZarplataRU.getVacancies();
         } catch (Exception ex){
