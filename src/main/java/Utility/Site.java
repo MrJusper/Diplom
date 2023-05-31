@@ -3,7 +3,7 @@ package Utility;
 import java.io.IOException;
 
 public interface Site {
-    String getParseData() throws IOException;
+    String getParseData();
 
     default String addOrReplacementParameterURL(String url, String param, String value){
         value = value.strip().replaceAll(" ","+");

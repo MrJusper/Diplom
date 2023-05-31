@@ -6,16 +6,7 @@ import Utility.UserInterface;
 
 public class Main {
     public static void main(String[] args){
-
-        Site hhru = new HeadHunter();
-        UserInterface IOUserInterface = new UserInterface();
-        try{
-       //     hhru.getParseData();
-           // TrudVsem.getVacancies();
-          //  ZarplataRU.getVacancies();
-        } catch (Exception ex){
-            System.out.println(ex.getMessage());
-        }
-
+        Site[] sites = new Site[]{new HeadHunter()};
+        UserInterface IOUserInterface = new UserInterface(sites);
     }
 }

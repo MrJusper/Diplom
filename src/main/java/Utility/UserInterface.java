@@ -12,13 +12,20 @@ package Utility;
 //      gbc.insets = new Insets(5,5,5,5); down left right top (pixels)
 
 import javax.swing.*;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.StyledDocument;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 
 public class UserInterface {
-
-    public UserInterface(){
-
- //       Collector.setKeyWords("Мэнеджер по продажам косметики");
+    ArrayList<Site> sites = new ArrayList<>();
+    public UserInterface(Site[] sites){
+        Collections.addAll(this.sites, sites);
         makeScreen();
     }
 
@@ -27,6 +34,7 @@ public class UserInterface {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         GridBagConstraints gbc = new GridBagConstraints();
         GridBagLayout grid = new GridBagLayout();
+        frame.setResizable(false);
         frame.setLayout(grid);
 
 
@@ -47,11 +55,6 @@ public class UserInterface {
         frame.add(forKeyWords, gbc);
         gbc.gridwidth = 1;
 
-        JButton btn1 = new JButton("Искать");
-        gbc.insets = new Insets(0,insets,insets,insets);
-        gbc.gridx = 0;
-        gbc.gridy = 1;
-        frame.add(btn1, gbc);
 
         JButton btn2 = new JButton("Сохранить");
         gbc.insets = new Insets(0,0,insets,0);
@@ -71,19 +74,38 @@ public class UserInterface {
         gbc.gridx = 0;
         gbc.gridy = 2;
         gbc.gridwidth = 3;
-        gbc.ipady = 500;
+        logs.setPreferredSize(new Dimension(0,500));
         frame.add(logs, gbc);
 
         JTextPane Output = new JTextPane();
-        logs.setEditable(false);
+        Output.setEditable(false);
         gbc.insets = new Insets(insets,0,insets,insets);
         gbc.gridx = 3;
         gbc.gridy = 0;
-        gbc.ipadx = 500;
+        gbc.gridwidth = 0;
         gbc.gridheight = 3;
+        Output.setPreferredSize(new Dimension(500,500));
         frame.add(Output, gbc);
+
+        JButton btn1 = new JButton("Искать");
+        gbc.insets = new Insets(0,insets,insets,insets);
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        gbc.gridheight = 1;
+        gbc.gridwidth = 1;
+        frame.add(btn1, gbc);
+        ActionListener actionListener = new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                Output.setText("Denis");
+               System.out.println("Жопа");
+
+            }
+        };
+        btn1.addActionListener(actionListener);
 
         frame.pack();
         frame.setVisible(true);
     }
 }
+

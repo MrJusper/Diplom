@@ -5,7 +5,7 @@ import Utility.Site;
 import org.apache.commons.io.IOUtils;
 import org.json.JSONObject;
 
-import java.io.IOException;
+import javax.swing.*;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
@@ -13,9 +13,16 @@ public class HeadHunter implements Site {
 
     private String search_value = "https://api.hh.ru/vacancies";
     private String answer = "";
-    public String getJsonVacanciesFromRequest(String request) throws IOException { // send request and get json
-        URL url = new URL(request);
-        return IOUtils.toString(url, StandardCharsets.UTF_8);
+    private String log;
+
+    public String getJsonVacanciesFromRequest(String request){ // send request and get json
+        try{
+            URL url = new URL(request);
+            return IOUtils.toString(url, StandardCharsets.UTF_8);
+        }catch (Exception e){
+            log = e.getMessage();
+        }
+        return "Не удалось получить ответ\n";
     }
 
     void useFilter(){ //  use user filters
@@ -26,7 +33,7 @@ public class HeadHunter implements Site {
         search_value = addOrReplacementParameterURL(search_value, "per_page", "100");
     }
 
-    void fillAnswer(String raw_json_vacancies) throws IOException { // create list vacancies
+    void fillAnswer(String raw_json_vacancies){ // create list vacancies
         JSONObject json = new JSONObject(raw_json_vacancies);
         int pages = json.getInt("pages");
         int per_page = json.getInt("per_page");
@@ -50,11 +57,14 @@ public class HeadHunter implements Site {
     }
 
     @Override
-    public final String getParseData() throws IOException { // main scenario
+    public final String getParseData(){ // main scenario
         useFilter();
         fillAnswer(getJsonVacanciesFromRequest(search_value));
-        System.out.println(answer);
+        log += "Список вакансий с HeadHunter успешно загружен\n";
         return answer;
     }
 
+    public String getLog() {
+        return log;
+    }
 }
