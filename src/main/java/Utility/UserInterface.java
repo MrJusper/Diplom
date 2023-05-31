@@ -74,6 +74,7 @@ public class UserInterface {
         gbc.gridx = 0;
         gbc.gridy = 2;
         gbc.gridwidth = 3;
+        logs.setText("Тут шаги выполнения\n");
         logs.setPreferredSize(new Dimension(0,500));
         frame.add(logs, gbc);
 
@@ -84,6 +85,7 @@ public class UserInterface {
         gbc.gridy = 0;
         gbc.gridwidth = 0;
         gbc.gridheight = 3;
+        Output.setText("Тут будут фигуранты\n");
         Output.setPreferredSize(new Dimension(500,500));
         frame.add(Output, gbc);
 
@@ -97,9 +99,7 @@ public class UserInterface {
         ActionListener actionListener = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Output.setText("Denis");
-               System.out.println("Жопа");
-
+                logs.setText(logs.getText()+"Поиск начался\n");
             }
         };
         btn1.addActionListener(actionListener);
