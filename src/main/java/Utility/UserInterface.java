@@ -12,15 +12,11 @@ package Utility;
 //      gbc.insets = new Insets(5,5,5,5); down left right top (pixels)
 
 import javax.swing.*;
-import javax.swing.text.BadLocationException;
-import javax.swing.text.StyledDocument;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
+import java.util.*;
+import java.util.List;
+import java.util.Timer;
 
 public class UserInterface {
     ArrayList<Site> sites = new ArrayList<>();
@@ -96,16 +92,42 @@ public class UserInterface {
         gbc.gridheight = 1;
         gbc.gridwidth = 1;
         frame.add(btn1, gbc);
-        ActionListener actionListener = new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                logs.setText(logs.getText()+"Поиск начался\n");
-            }
+        ActionListener actionListener = e -> {
+            logs.setText(logs.getText()+"Поиск начался\n");
+            SwingWorker<String, Void> searchVacancies = new SwingWorker<String, Void>() { // heavy work
+                @Override
+                public String doInBackground() {
+
+                    Timer timer = new Timer();
+
+                    timer.scheduleAtFixedRate(new TimerTask() {
+
+                        Date date = new Date();
+                        @Override
+                        public void run() {
+                            logs.setText(logs.getText()+"Прошло секунд: "+ ((new Date().getTime() - date.getTime()) /1000)+"\n");;
+                        }
+                    }, 1000, 1000);
+
+                    String answer = "";
+                    for(Site site : sites){
+                        answer += site.getParseData();
+                    }
+                    Output.setText(answer);
+                    logs.setText(logs.getText()+"Поиск закончился\n");
+                    timer.cancel();
+                    return answer;
+                }
+            };
+            searchVacancies.execute();
         };
         btn1.addActionListener(actionListener);
+
 
         frame.pack();
         frame.setVisible(true);
     }
 }
+
+
 

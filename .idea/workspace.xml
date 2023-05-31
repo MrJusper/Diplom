@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f9e9c201-83c1-4152-ac4c-ccd4547b8b2e" name="Changes" comment="Gavno but worked sdf">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Sites/HeadHunter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Sites/HeadHunter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/Site.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility/Site.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Utility/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility/UserInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -120,7 +117,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685532616887</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Gavno but worked sdf">
+      <created>1685541259361</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1685541259361</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Gavno but worked sdf">
+      <created>1685542996813</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1685542996813</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
