@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f9e9c201-83c1-4152-ac4c-ccd4547b8b2e" name="Changes" comment="Gavno but worked sdf">
+    <list default="true" id="f9e9c201-83c1-4152-ac4c-ccd4547b8b2e" name="Changes" comment="Gavno but worked sdf + UI + timer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utility/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utility/UserInterface.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685542996813</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Gavno but worked sdf + UI + timer">
+      <created>1685554011334</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1685554011334</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -148,6 +154,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Gavno but worked" />
     <MESSAGE value="Gavno but worked sdf" />
-    <option name="LAST_COMMIT_MESSAGE" value="Gavno but worked sdf" />
+    <MESSAGE value="Gavno but worked sdf + UI + timer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Gavno but worked sdf + UI + timer" />
   </component>
 </project>

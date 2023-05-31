@@ -93,11 +93,11 @@ public class UserInterface {
         gbc.gridwidth = 1;
         frame.add(btn1, gbc);
         ActionListener actionListener = e -> {
+            btn1.setEnabled(false);
             logs.setText(logs.getText()+"Поиск начался\n");
             SwingWorker<String, Void> searchVacancies = new SwingWorker<String, Void>() { // heavy work
                 @Override
                 public String doInBackground() {
-
                     Timer timer = new Timer();
 
                     timer.scheduleAtFixedRate(new TimerTask() {
@@ -116,6 +116,7 @@ public class UserInterface {
                     Output.setText(answer);
                     logs.setText(logs.getText()+"Поиск закончился\n");
                     timer.cancel();
+                    btn1.setEnabled(true);
                     return answer;
                 }
             };
