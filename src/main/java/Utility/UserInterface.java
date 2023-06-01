@@ -34,8 +34,9 @@ public class UserInterface {
         frame.setLayout(grid);
 
 
+        int textDirection = JLabel.LEFT;
         JLabel labelForSearch = new JLabel("Поиск:");
-        labelForSearch.setHorizontalAlignment(JLabel.CENTER);
+        labelForSearch.setHorizontalAlignment(textDirection); // 0, 0
         int insets = 10;
         gbc.insets = new Insets(insets,insets,insets,insets);
         gbc.fill = GridBagConstraints.BOTH;
@@ -43,7 +44,7 @@ public class UserInterface {
         gbc.gridy = 0;
         frame.add(labelForSearch, gbc);
 
-        JTextField forKeyWords = new JTextField();
+        JTextField forKeyWords = new JTextField(); // 1 0
         gbc.insets = new Insets(insets,0,insets,insets);
         gbc.gridx = 1;
         gbc.gridy = 0;
@@ -51,20 +52,52 @@ public class UserInterface {
         frame.add(forKeyWords, gbc);
         gbc.gridwidth = 1;
 
-        Dimension dimensionLogs = new Dimension(200,500);
+        JLabel labelForCountry = new JLabel("Страна:"); // 0 1
+        labelForCountry.setHorizontalAlignment(textDirection);
+        gbc.insets = new Insets(0,insets,insets,insets);
+        gbc.fill = GridBagConstraints.BOTH;
+        gbc.gridx = 0;
+        gbc.gridy = 1;
+        frame.add(labelForCountry, gbc);
+
+        JComboBox<String> country = new JComboBox<>(new String[]{"Россия", "Украина", "Казахстан"});
+        gbc.insets = new Insets(0,0,insets,insets);
+        gbc.fill = GridBagConstraints.BOTH;
+        gbc.gridx = 1;
+        gbc.gridy = 1;
+        gbc.gridwidth = 2;
+        frame.add(country, gbc);
+
+        JLabel labelForSalary = new JLabel("Оклад RUB:"); // 0 2
+        labelForSalary.setHorizontalAlignment(textDirection);
+        gbc.insets = new Insets(0,insets,insets,insets);
+        gbc.fill = GridBagConstraints.BOTH;
+        gbc.gridx = 0;
+        gbc.gridy = 2;
+        frame.add(labelForSalary, gbc);
+
+        JTextField forSalary = new JTextField(); // 1 0
+        gbc.insets = new Insets(0,0,insets,insets);
+        gbc.gridx = 1;
+        gbc.gridy = 2;
+        gbc.gridwidth = 2;
+        frame.add(forSalary, gbc);
+        gbc.gridwidth = 1;
+
+        Dimension dimensionLogs = new Dimension(200,500); // 0 4
         JTextPane logs = new JTextPane();
         JScrollPane jspLogs = new JScrollPane(logs);
         logs.setEditable(false);
         jspLogs.setPreferredSize(dimensionLogs);
         gbc.insets = new Insets(0,insets,insets,insets);
         gbc.gridx = 0;
-        gbc.gridy = 2;
+        gbc.gridy = 4;
         gbc.gridwidth = 3;
         logs.setText("Тут шаги выполнения\n");
         logs.setPreferredSize(dimensionLogs);
         frame.add(jspLogs, gbc);
 
-        Dimension dimensionTextVacancies = new Dimension(900,600);
+        Dimension dimensionTextVacancies = new Dimension(900,600); // 3 0
         JTextPane Output = new JTextPane();
         JScrollPane jsp = new JScrollPane(Output);
         Output.setEditable(false);
@@ -73,15 +106,15 @@ public class UserInterface {
         gbc.gridx = 3;
         gbc.gridy = 0;
         gbc.gridwidth = 0;
-        gbc.gridheight = 3;
+        gbc.gridheight = 5;
         Output.setText("Тут будут фигуранты\n");
         Output.setPreferredSize(dimensionTextVacancies);
         frame.add(jsp, gbc);
 
-        JButton btn1 = new JButton("Искать");
+        JButton btn1 = new JButton("Искать"); // 0 3
         gbc.insets = new Insets(0,insets,insets,insets);
         gbc.gridx = 0;
-        gbc.gridy = 1;
+        gbc.gridy = 3;
         gbc.gridheight = 1;
         gbc.gridwidth = 1;
         frame.add(btn1, gbc);
@@ -117,10 +150,10 @@ public class UserInterface {
         };
         btn1.addActionListener(actionListener);
 
-        JButton btn2 = new JButton("Сохранить"); // BUTTON SAVE
+        JButton btn2 = new JButton("Сохранить"); // BUTTON SAVE 1 3
         gbc.insets = new Insets(0,0,insets,0);
         gbc.gridx = 1;
-        gbc.gridy = 1;
+        gbc.gridy = 3;
         frame.add(btn2, gbc);
         btn2.addActionListener(e -> {
             logs.setText(logs.getText()+"Считай сохранил\n");
@@ -161,10 +194,10 @@ public class UserInterface {
             Save_frame.setVisible(true);
         });
 
-        JButton btn3 = new JButton("Удалить");
+        JButton btn3 = new JButton("Удалить"); // 2 3
         gbc.insets = new Insets(0,insets,insets,insets);
         gbc.gridx = 2;
-        gbc.gridy = 1;
+        gbc.gridy = 3;
         frame.add(btn3, gbc);
         btn3.addActionListener(e -> {
             logs.setText(logs.getText()+"Считай удалил\n");
