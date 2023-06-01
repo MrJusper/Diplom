@@ -4,10 +4,8 @@ package Utility;
 
 public class Collector {
     private static String keyWords;
-    String City;
-    String minSalary;
-    String maxSalary;
-    String distant;
+    private static String minSalary;
+    private String country;
 
     public static String getKeyWords() {
         return keyWords;
@@ -17,4 +15,19 @@ public class Collector {
         Collector.keyWords = keyWords;
     }
 
+    public static String getMinSalary() {
+        return minSalary;
+    }
+
+    public static void setMinSalary(String minSalary) {
+        Collector.minSalary = minSalary;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
 }
