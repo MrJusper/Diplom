@@ -13,7 +13,6 @@ package Utility;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.*;
 import java.util.Timer;
@@ -116,24 +115,14 @@ public class UserInterface {
         gbc.gridx = 1;
         gbc.gridy = 1;
         frame.add(btn2, gbc);
-        btn2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                logs.setText(logs.getText()+"Считай сохранил\n");
-            }
-        });
+        btn2.addActionListener(e -> logs.setText(logs.getText()+"Считай сохранил\n"));
 
         JButton btn3 = new JButton("Удалить");
         gbc.insets = new Insets(0,insets,insets,insets);
         gbc.gridx = 2;
         gbc.gridy = 1;
         frame.add(btn3, gbc);
-        btn3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                logs.setText(logs.getText()+"Считай удалил\n");
-            }
-        });
+        btn3.addActionListener(e -> logs.setText(logs.getText()+"Считай удалил\n"));
 
 
         frame.pack();
