@@ -169,7 +169,9 @@ public class UserInterface {
             Delete_frame.setResizable(false);
             Delete_frame.setLayout(Delete_grid);
 
-            File[] listOfFiles = new File("./src/main/resources").listFiles();
+            String directory = "../сохранённые_вакансии";
+            new File(directory).mkdir();
+            File[] listOfFiles = new File("../сохранённые_вакансии").listFiles();
             ArrayList<String> list = new ArrayList<>();
             for (File file : listOfFiles) {
                 list.add(file.getName());
