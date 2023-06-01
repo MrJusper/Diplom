@@ -13,6 +13,7 @@ package Utility;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.*;
 import java.util.Timer;
@@ -49,19 +50,6 @@ public class UserInterface {
         gbc.gridwidth = 2;
         frame.add(forKeyWords, gbc);
         gbc.gridwidth = 1;
-
-
-        JButton btn2 = new JButton("Сохранить");
-        gbc.insets = new Insets(0,0,insets,0);
-        gbc.gridx = 1;
-        gbc.gridy = 1;
-        frame.add(btn2, gbc);
-
-        JButton btn3 = new JButton("Удалить");
-        gbc.insets = new Insets(0,insets,insets,insets);
-        gbc.gridx = 2;
-        gbc.gridy = 1;
-        frame.add(btn3, gbc);
 
         JTextPane logs = new JTextPane();
         logs.setEditable(false);
@@ -122,6 +110,30 @@ public class UserInterface {
             searchVacancies.execute();
         };
         btn1.addActionListener(actionListener);
+
+        JButton btn2 = new JButton("Сохранить");
+        gbc.insets = new Insets(0,0,insets,0);
+        gbc.gridx = 1;
+        gbc.gridy = 1;
+        frame.add(btn2, gbc);
+        btn2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                logs.setText(logs.getText()+"Считай сохранил\n");
+            }
+        });
+
+        JButton btn3 = new JButton("Удалить");
+        gbc.insets = new Insets(0,insets,insets,insets);
+        gbc.gridx = 2;
+        gbc.gridy = 1;
+        frame.add(btn3, gbc);
+        btn3.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                logs.setText(logs.getText()+"Считай удалил\n");
+            }
+        });
 
 
         frame.pack();
