@@ -14,6 +14,7 @@ package Utility;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.util.*;
 import java.util.Timer;
 
@@ -159,7 +160,49 @@ public class UserInterface {
         gbc.gridx = 2;
         gbc.gridy = 1;
         frame.add(btn3, gbc);
-        btn3.addActionListener(e -> logs.setText(logs.getText()+"Считай удалил\n"));
+        btn3.addActionListener(e -> {
+            logs.setText(logs.getText()+"Считай удалил\n");
+            JDialog Delete_frame = new JDialog(frame, "ПРОЦЕДУРА УДАЛЕНИЯ");
+            Delete_frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            GridBagConstraints Delete_gbc = new GridBagConstraints();
+            GridBagLayout Delete_grid = new GridBagLayout();
+            Delete_frame.setResizable(false);
+            Delete_frame.setLayout(Delete_grid);
+
+            File[] listOfFiles = new File("./src/main/resources").listFiles();
+            ArrayList<String> list = new ArrayList<>();
+            for (File file : listOfFiles) {
+                list.add(file.getName());
+            }
+            JList Saved_files = new JList(list.toArray(new String[0]));
+            Delete_gbc.insets = new Insets(insets,insets,0,insets);
+            Delete_gbc.fill = GridBagConstraints.BOTH;
+            Delete_gbc.gridx = 0;
+            Delete_gbc.gridy = 0;
+            Delete_gbc.gridheight = 1;
+            Delete_gbc.gridwidth = 2;
+            Saved_files.setPreferredSize(new Dimension(400,400));
+            Delete_frame.add(Saved_files,Delete_gbc);
+
+            JButton Save_btn1 = new JButton("Удалить");
+            Delete_gbc.insets = new Insets(insets,0,insets,insets);
+            Delete_gbc.gridx = 1;
+            Delete_gbc.gridy = 1;
+            Delete_gbc.gridheight = 1;
+            Delete_gbc.gridwidth = 1;
+            Delete_frame.add(Save_btn1, Delete_gbc);
+
+            JLabel Save_labelForSearch = new JLabel("Выберите файл для удаления");
+            Save_labelForSearch.setHorizontalAlignment(JLabel.CENTER);
+            Delete_gbc.insets = new Insets(insets,insets,insets,insets);
+            Delete_gbc.gridx = 0;
+            Delete_gbc.gridy = 1;
+            Delete_frame.add(Save_labelForSearch, Delete_gbc);
+
+            Delete_frame.pack();
+            Delete_frame.setLocationRelativeTo(null);
+            Delete_frame.setVisible(true);
+        });
 
 
         frame.pack();
