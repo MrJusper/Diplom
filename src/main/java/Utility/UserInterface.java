@@ -43,7 +43,7 @@ public class UserInterface {
         frame.add(labelForSearch, gbc);
 
         JTextField forKeyWords = new JTextField();
-        gbc.insets = new Insets(insets,insets,insets,insets);
+        gbc.insets = new Insets(insets,0,insets,insets);
         gbc.gridx = 1;
         gbc.gridy = 0;
         gbc.gridwidth = 2;
@@ -110,12 +110,49 @@ public class UserInterface {
         };
         btn1.addActionListener(actionListener);
 
-        JButton btn2 = new JButton("Сохранить");
+        JButton btn2 = new JButton("Сохранить"); // BUTTON SAVE
         gbc.insets = new Insets(0,0,insets,0);
         gbc.gridx = 1;
         gbc.gridy = 1;
         frame.add(btn2, gbc);
-        btn2.addActionListener(e -> logs.setText(logs.getText()+"Считай сохранил\n"));
+        btn2.addActionListener(e -> {
+            logs.setText(logs.getText()+"Считай сохранил\n");
+            JDialog Save_frame = new JDialog(frame, "ПРОЦЕДУРА СОХРАНЕНИЯ");
+            Save_frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            GridBagConstraints Save_gbc = new GridBagConstraints();
+            GridBagLayout Save_grid = new GridBagLayout();
+            Save_frame.setResizable(false);
+            Save_frame.setLayout(Save_grid);
+
+            JLabel Save_labelForSearch = new JLabel("Укажите название файла:");
+            Save_labelForSearch.setHorizontalAlignment(JLabel.CENTER);
+            Save_gbc.insets = new Insets(insets,insets,insets,insets);
+            Save_gbc.fill = GridBagConstraints.BOTH;
+            Save_gbc.gridx = 0;
+            Save_gbc.gridy = 0;
+            Save_frame.add(Save_labelForSearch, Save_gbc);
+
+            JTextField Save_forKeyWords = new JTextField();
+            Save_gbc.insets = new Insets(insets,0,insets,0);
+            Save_gbc.gridx = 1;
+            Save_gbc.gridy = 0;
+            Save_gbc.gridwidth = 2;
+            Save_forKeyWords.setPreferredSize(new Dimension( 250,16));
+            Save_frame.add(Save_forKeyWords, Save_gbc);
+            Save_gbc.gridwidth = 1;
+
+            JButton Save_btn1 = new JButton("Сохранить");
+            Save_gbc.insets = new Insets(insets,insets,insets,insets);
+            Save_gbc.gridx = 3;
+            Save_gbc.gridy = 0;
+            Save_gbc.gridheight = 1;
+            Save_gbc.gridwidth = 1;
+            Save_frame.add(Save_btn1, Save_gbc);
+
+            Save_frame.pack();
+            Save_frame.setLocationRelativeTo(null);
+            Save_frame.setVisible(true);
+        });
 
         JButton btn3 = new JButton("Удалить");
         gbc.insets = new Insets(0,insets,insets,insets);
@@ -126,6 +163,7 @@ public class UserInterface {
 
 
         frame.pack();
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 }
