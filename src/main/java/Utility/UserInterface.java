@@ -51,26 +51,32 @@ public class UserInterface {
         frame.add(forKeyWords, gbc);
         gbc.gridwidth = 1;
 
+        Dimension dimensionLogs = new Dimension(200,500);
         JTextPane logs = new JTextPane();
+        JScrollPane jspLogs = new JScrollPane(logs);
         logs.setEditable(false);
+        jspLogs.setPreferredSize(dimensionLogs);
         gbc.insets = new Insets(0,insets,insets,insets);
         gbc.gridx = 0;
         gbc.gridy = 2;
         gbc.gridwidth = 3;
         logs.setText("Тут шаги выполнения\n");
-        logs.setPreferredSize(new Dimension(0,500));
-        frame.add(logs, gbc);
+        logs.setPreferredSize(dimensionLogs);
+        frame.add(jspLogs, gbc);
 
+        Dimension dimensionTextVacancies = new Dimension(900,600);
         JTextPane Output = new JTextPane();
+        JScrollPane jsp = new JScrollPane(Output);
         Output.setEditable(false);
+        jsp.setPreferredSize(dimensionTextVacancies);
         gbc.insets = new Insets(insets,0,insets,insets);
         gbc.gridx = 3;
         gbc.gridy = 0;
         gbc.gridwidth = 0;
         gbc.gridheight = 3;
         Output.setText("Тут будут фигуранты\n");
-        Output.setPreferredSize(new Dimension(500,500));
-        frame.add(Output, gbc);
+        Output.setPreferredSize(dimensionTextVacancies);
+        frame.add(jsp, gbc);
 
         JButton btn1 = new JButton("Искать");
         gbc.insets = new Insets(0,insets,insets,insets);
