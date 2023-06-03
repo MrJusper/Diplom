@@ -212,6 +212,22 @@ public class UserInterface {
             Save_frame.pack();
             Save_frame.setLocationRelativeTo(null);
             Save_frame.setVisible(true);
+
+            SwingWorker<String, Void> SaveButtonEnabled = new SwingWorker<String, Void>() { // heavy work
+                @Override
+                public String doInBackground() {
+                    while(Save_frame.isVisible()){
+                        if("".equals(Save_forKeyWords.getText())){
+                            Save_btn1.setEnabled(false);
+                        }else{
+                            Save_btn1.setEnabled(true);
+                        }
+                        System.out.print("1");
+                    }
+                    return "";
+                }
+            };
+            SaveButtonEnabled.execute();
         });
 
         JButton btn3 = new JButton("Удалить"); // 2 3
