@@ -41,7 +41,7 @@ public class HeadHunter implements Site {
             String a = IOUtils.toString(url, StandardCharsets.UTF_8);
             System.out.println(a);
         } catch (Exception e){
-
+            System.out.println(e.getMessage());
         }
 
     }
