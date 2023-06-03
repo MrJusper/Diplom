@@ -12,9 +12,13 @@ package Utility;
 //      gbc.insets = new Insets(5,5,5,5); down left right top (pixels)
 
 import javax.swing.*;
+import javax.swing.event.HyperlinkEvent;
+import javax.swing.event.HyperlinkListener;
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.IOException;
+import java.net.URISyntaxException;
 import java.util.*;
 import java.util.Timer;
 
@@ -99,6 +103,7 @@ public class UserInterface {
 
         Dimension dimensionTextVacancies = new Dimension(900,600); // 3 0
         JTextPane Output = new JTextPane();
+        Output.setContentType("text/html");
         JScrollPane jsp = new JScrollPane(Output);
         Output.setEditable(false);
         jsp.setPreferredSize(dimensionTextVacancies);
@@ -110,6 +115,20 @@ public class UserInterface {
         Output.setText("Тут будут фигуранты\n");
         Output.setPreferredSize(dimensionTextVacancies);
         frame.add(jsp, gbc);
+        Output.addHyperlinkListener(new HyperlinkListener() {
+            @Override
+            public void hyperlinkUpdate(HyperlinkEvent e) {
+                if(e.getEventType() == HyperlinkEvent.EventType.ACTIVATED) {
+                    if(Desktop.isDesktopSupported()) {
+                        try {
+                            Desktop.getDesktop().browse(e.getURL().toURI());
+                        } catch (IOException | URISyntaxException ex) {
+                            throw new RuntimeException(ex);
+                        }
+                    }
+                }
+            }
+        });
 
         JButton btn1 = new JButton("Искать"); // 0 3
         gbc.insets = new Insets(0,insets,insets,insets);
@@ -156,7 +175,7 @@ public class UserInterface {
         gbc.gridy = 3;
         frame.add(btn2, gbc);
         btn2.addActionListener(e -> {
-            logs.setText(logs.getText()+"Считай сохранил\n");
+            logs.setText(logs.getText()+"Файл \"Файл_1\" сохранён\n");
             JDialog Save_frame = new JDialog(frame, "ПРОЦЕДУРА СОХРАНЕНИЯ");
             Save_frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             GridBagConstraints Save_gbc = new GridBagConstraints();
@@ -200,7 +219,7 @@ public class UserInterface {
         gbc.gridy = 3;
         frame.add(btn3, gbc);
         btn3.addActionListener(e -> {
-            logs.setText(logs.getText()+"Считай удалил\n");
+            logs.setText(logs.getText()+"Файл \"Файл_1\" удалён\n");
             JDialog Delete_frame = new JDialog(frame, "ПРОЦЕДУРА УДАЛЕНИЯ");
             Delete_frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
             GridBagConstraints Delete_gbc = new GridBagConstraints();

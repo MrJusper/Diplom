@@ -52,8 +52,8 @@ public class HeadHunter implements Site {
         vacancy += "\t"+json.getJSONObject("salary").optString("from", "не указано");   // salary min
         vacancy += "\t"+json.getJSONObject("salary").optString("to", "не указано");   // salary max
         vacancy += "\t"+json.getJSONObject("salary").optString("currency", "не указано"); // currency
-        vacancy += "\t"+json.getString("alternate_url");    // link
-        return vacancy.strip() + "\n";
+        vacancy += "\t"+"<a href=\""+json.getString("alternate_url")+"\">"+json.getString("alternate_url")+"</a>";    // link
+        return vacancy.strip() + "<br>";
     }
 
     @Override
