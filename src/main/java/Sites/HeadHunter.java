@@ -31,6 +31,19 @@ public class HeadHunter implements Site {
         }
         search_value = addOrReplacementParameterURL(search_value, "only_with_salary", "true");
         search_value = addOrReplacementParameterURL(search_value, "per_page", "100");
+        search_value = addOrReplacementParameterURL(search_value, "text", "Java разработчик"); // temp
+        search_value = addOrReplacementParameterURL(search_value, "salary", "70000"); // temp
+        search_value = addOrReplacementParameterURL(search_value, "currency", "RUR"); // temp
+        search_value = addOrReplacementParameterURL(search_value, "area", "113"); // temp
+        System.out.println(search_value);
+        try{
+            URL url = new URL(search_value);
+            String a = IOUtils.toString(url, StandardCharsets.UTF_8);
+            System.out.println(a);
+        } catch (Exception e){
+
+        }
+
     }
 
     void fillAnswer(String raw_json_vacancies){ // create list vacancies
