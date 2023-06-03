@@ -243,8 +243,7 @@ public class UserInterface {
             Delete_frame.setResizable(false);
             Delete_frame.setLayout(Delete_grid);
 
-            String directory = "../сохранённые_вакансии";
-            new File(directory).mkdir();
+            String directory = "./сохранённые_вакансии";
             File[] listOfFiles = new File("../сохранённые_вакансии").listFiles();
             ArrayList<String> list = new ArrayList<>();
             for (File file : listOfFiles) {
