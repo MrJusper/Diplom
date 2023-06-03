@@ -15,6 +15,7 @@ import javax.swing.*;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.HyperlinkListener;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
@@ -218,7 +219,7 @@ public class UserInterface {
         gbc.gridx = 2;
         gbc.gridy = 3;
         frame.add(btn3, gbc);
-        btn3.addActionListener(e -> {
+        btn3.addActionListener(f -> {
             logs.setText(logs.getText()+"Файл \"Файл_1\" удалён\n");
             JDialog Delete_frame = new JDialog(frame, "ПРОЦЕДУРА УДАЛЕНИЯ");
             Delete_frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -234,30 +235,30 @@ public class UserInterface {
             for (File file : listOfFiles) {
                 list.add(file.getName());
             }
-            JList Saved_files = new JList(list.toArray(new String[0]));
+            JList Delete_files = new JList(list.toArray(new String[0]));
             Delete_gbc.insets = new Insets(insets,insets,0,insets);
             Delete_gbc.fill = GridBagConstraints.BOTH;
             Delete_gbc.gridx = 0;
             Delete_gbc.gridy = 0;
             Delete_gbc.gridheight = 1;
             Delete_gbc.gridwidth = 2;
-            Saved_files.setPreferredSize(new Dimension(400,400));
-            Delete_frame.add(Saved_files,Delete_gbc);
+            Delete_files.setPreferredSize(new Dimension(400,400));
+            Delete_frame.add(Delete_files,Delete_gbc);
 
-            JButton Save_btn1 = new JButton("Удалить");
+            JButton Delete_btn1 = new JButton("Удалить");
             Delete_gbc.insets = new Insets(insets,0,insets,insets);
             Delete_gbc.gridx = 1;
             Delete_gbc.gridy = 1;
             Delete_gbc.gridheight = 1;
             Delete_gbc.gridwidth = 1;
-            Delete_frame.add(Save_btn1, Delete_gbc);
+            Delete_frame.add(Delete_btn1, Delete_gbc);
 
-            JLabel Save_labelForSearch = new JLabel("Выберите файл для удаления");
-            Save_labelForSearch.setHorizontalAlignment(JLabel.CENTER);
+            JLabel Delete_labelForSearch = new JLabel("Выберите файл для удаления");
+            Delete_labelForSearch.setHorizontalAlignment(JLabel.CENTER);
             Delete_gbc.insets = new Insets(insets,insets,insets,insets);
             Delete_gbc.gridx = 0;
             Delete_gbc.gridy = 1;
-            Delete_frame.add(Save_labelForSearch, Delete_gbc);
+            Delete_frame.add(Delete_labelForSearch, Delete_gbc);
 
             Delete_frame.pack();
             Delete_frame.setLocationRelativeTo(null);
