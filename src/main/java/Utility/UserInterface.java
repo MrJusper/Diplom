@@ -222,7 +222,6 @@ public class UserInterface {
                         }else{
                             Save_btn1.setEnabled(true);
                         }
-                        System.out.print("1");
                     }
                     return "";
                 }
